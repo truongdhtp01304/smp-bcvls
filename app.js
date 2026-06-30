@@ -6,57 +6,6 @@ const backgroundVideos = [
   "./data/video/steve-peaceful-day-of-fishing-minecraft-moewalls-com.mp4"
 ];
 
-// List of all mods used in Fabric 1.21.11 Modpack
-const modPackList = [
-  "animatica-0.6.1+1.21.5.jar (Hỗ trợ cấu hình hiệu ứng động)",
-  "automodpack-mc1.21.11-fabric-4.0.5.jar (Tự động tải và đồng bộ mod từ server)",
-  "bbe-fabric-1.3.4+mc1.21.11.jar",
-  "BetterGrassify-1.8.6+fabric.1.21.11.jar (Cải thiện đồ họa cỏ xanh)",
-  "bettermounthud-1.2.6.jar (Cải thiện HUD khi cưỡi thú)",
-  "cape-provider-5.1.0.jar (Hiển thị áo choàng của người chơi)",
-  "cloth-config-21.11.153-fabric.jar (Thư viện cấu hình mod)",
-  "ConfigManager-fabric-1.21.x-1.11.jar",
-  "continuity-3.0.1-beta.1+1.21.11.jar (Hiệu ứng nối liền kính và khối block giống Optifine)",
-  "controlify-3.0.0+lts+1.21.11-fabric.jar (Hỗ trợ chơi game bằng tay cầm controller)",
-  "CrashAssistant-fabric-1.21.5-1.21.11-1.11.9.jar (Hỗ trợ chẩn đoán khi game bị crash)",
-  "cwb-fabric-3.0.0-build.14+mc1.21.11.jar",
-  "debugify-1.21.11+1.1.jar (Sửa hàng loạt lỗi nhỏ của Minecraft gốc)",
-  "dynamic-fps-3.11.6+minecraft-1.21.11-fabric.jar (Tự động giảm FPS khi thu nhỏ game để tiết kiệm RAM/CPU)",
-  "e4mc-fabric-6.1.1.jar (Mở cổng chơi chung LAN ra Internet miễn phí)",
-  "entityculling-fabric-1.10.2-mc1.21.11.jar (Ẩn các thực thể bị che khuất để tăng tốc game)",
-  "entity_model_features-3.2.4-1.21.11-fabric.jar (Hỗ trợ mô hình thực thể tùy chỉnh)",
-  "entity_texture_features_1.21.11-fabric-7.1.jar (Hỗ trợ texture thực thể tùy chỉnh)",
-  "fabric-api-0.141.4+1.21.11.jar (Thư viện Fabric API bắt buộc)",
-  "fabric-language-kotlin-1.13.12+kotlin.2.4.0.jar (Thư viện ngôn ngữ Kotlin cho mod)",
-  "fabrishot-1.16.4.jar (Chụp ảnh màn hình độ phân giải siêu cao 4K/8K)",
-  "fastquit-3.1.3+mc1.21.11.jar (Thoát game cực nhanh mà không cần đợi lưu dữ liệu thế giới hoàn tất)",
-  "ForgeConfigAPIPort-v21.11.1-mc1.21.11...abric.jar",
-  "ImmediatelyFast-Fabric-1.14.2+1.21.1.jar (Tối ưu hóa tốc độ vẽ đồ họa thực thể)",
-  "iris-fabric-1.10.7+mc1.21.11.jar (Bật các gói Shader chất lượng cao cực đẹp)",
-  "Ixeris-4.4.1+1.21.11-fabric.jar",
-  "lambdynamiclights-4.9.1+1.21.11.jar (Ánh sáng động - cầm đuốc đi trong hang tự phát sáng)",
-  "language-reload-1.7.6+1.21.11.jar (Tải lại ngôn ngữ game cực nhanh)",
-  "lithium-fabric-0.21.4+mc1.21.11.jar (Mod tối ưu hóa game và tăng FPS toàn diện)",
-  "main-menu-credits-1.2.0.jar",
-  "mixintrace-1.1.1+1.17.jar",
-  "modmenu-17.0.0.jar (Giao diện xem danh sách và thiết lập các mod đã cài)",
-  "morechathistory-1.3.1.jar (Mở rộng lịch sử tin nhắn chat)",
-  "moreculling-fabric-1.21.11-1.6.2.jar (Tăng cường tối ưu render các khối ẩn)",
-  "NoChatReports-FABRIC-1.21.11-v2.18.0.jar (Bỏ báo cáo chat để đảm bảo tính riêng tư)",
-  "optigui-2.3.0-beta.10+1.21.9.jar (Giao diện rương đồ và lò nung tùy biến theo gói tài nguyên)",
-  "paginatedadvancements-2.8.0+1.21.1.jar (Giao diện xem thành tựu dạng trang)",
-  "polytone-fabric-1.21.11-5.7.2.jar",
-  "puzzle-fabric-2.3.0+1.21.11.jar",
-  "reeses-sodium-options-fabric-2....21.11.jar (Cải thiện giao diện cài đặt đồ họa của Sodium)",
-  "rrlsFabric-5.1.15+mc1.21.11.jar",
-  "skyboxify-2.8+1.21.11-fabric.jar (Hỗ trợ tùy biến bầu trời)",
-  "sodium-extra-fabric-0.8.3+mc1.21.11.jar (Bổ sung thêm nhiều cấu hình chi tiết cho Sodium)",
-  "sodium-fabric-0.8.12+mc1.21.11.jar (Mod tăng FPS cốt lõi, thay thế Optifine hiệu quả nhất)",
-  "sodium-shadowy-path-blocks-fabric-6.0.0.jar (Khắc phục đổ bóng trên khối đường đi)",
-  "yet_another_config_lib_v3-3.8.2+1.21.1-fabric.jar (Thư viện quản lý cấu hình)",
-  "zoomify-2.15.2+1.21.11.jar (Ống nhòm phóng to thu nhỏ màn hình bằng phím nóng mượt mà)"
-];
-
 // Initialize application logic
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize Lucide Icons
