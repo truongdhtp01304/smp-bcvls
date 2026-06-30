@@ -100,8 +100,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const serverIp = "top-travelers.gl.joinmc.link";
 
   async function checkServerStatus() {
+    // 1. Try mcstatus.io (v2 API) - highly reliable with no strict rate limits
     try {
-      const response = await fetch(`https://api.mcsrvstat.us/2/${serverIp}`);
+      const response = await fetch(`https://api.mcstatus.io/v2/status/java/${serverIp}`);
       const data = await response.json();
 
       if (data && data.online) {
@@ -109,15 +110,31 @@ document.addEventListener("DOMContentLoaded", () => {
         const playersOnline = data.players.online;
         const playersMax = data.players.max;
         statusText.innerHTML = `<span class="status-online-text">Đang chạy</span> (${playersOnline}/${playersMax})`;
-      } else {
-        statusDot.className = "status-dot offline";
-        statusText.innerHTML = `<span class="status-offline-text">Ngoại tuyến</span>`;
+        return; // successfully updated status
       }
-    } catch (error) {
-      console.error("Lỗi khi kết nối tới API trạng thái máy chủ:", error);
-      statusDot.className = "status-dot offline";
-      statusText.innerHTML = `<span class="status-offline-text">Ngoại tuyến</span>`;
+    } catch (e) {
+      console.warn("mcstatus.io API failed or offline, trying fallback:", e);
     }
+
+    // 2. Fallback to mcsrvstat.us (v3 API)
+    try {
+      const response = await fetch(`https://api.mcsrvstat.us/3/${serverIp}`);
+      const data = await response.json();
+
+      if (data && data.online) {
+        statusDot.className = "status-dot online";
+        const playersOnline = data.players.online;
+        const playersMax = data.players.max;
+        statusText.innerHTML = `<span class="status-online-text">Đang chạy</span> (${playersOnline}/${playersMax})`;
+        return; // successfully updated status
+      }
+    } catch (e) {
+      console.error("All server status APIs failed or server is truly offline:", e);
+    }
+
+    // 3. Fallback: If both fail or say offline, set state to offline
+    statusDot.className = "status-dot offline";
+    statusText.innerHTML = `<span class="status-offline-text">Ngoại tuyến</span>`;
   }
 
   // Run immediately and check every 60 seconds
