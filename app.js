@@ -250,20 +250,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // 5. Mobile Navigation Menu Toggle
   const mobileToggle = document.getElementById("mobile-toggle");
   const navMenu = document.getElementById("nav-menu");
-  const menuIcon = document.getElementById("menu-icon");
 
   if (mobileToggle && navMenu) {
+    const hamburgerIcon = mobileToggle.querySelector(".menu-icon-hamburger");
+    const closeIcon = mobileToggle.querySelector(".menu-icon-close");
+
     mobileToggle.addEventListener("click", () => {
       navMenu.classList.toggle("open");
       const isOpen = navMenu.classList.contains("open");
 
-      if (menuIcon) {
+      if (hamburgerIcon && closeIcon) {
         if (isOpen) {
-          menuIcon.setAttribute("data-lucide", "x");
+          hamburgerIcon.style.display = "none";
+          closeIcon.style.display = "inline-block";
         } else {
-          menuIcon.setAttribute("data-lucide", "menu");
+          hamburgerIcon.style.display = "inline-block";
+          closeIcon.style.display = "none";
         }
-        window.lucide.createIcons();
       }
     });
 
@@ -271,9 +274,9 @@ document.addEventListener("DOMContentLoaded", () => {
     navMenu.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         navMenu.classList.remove("open");
-        if (menuIcon) {
-          menuIcon.setAttribute("data-lucide", "menu");
-          window.lucide.createIcons();
+        if (hamburgerIcon && closeIcon) {
+          hamburgerIcon.style.display = "inline-block";
+          closeIcon.style.display = "none";
         }
       });
     });
