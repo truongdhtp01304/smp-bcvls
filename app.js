@@ -1,7 +1,7 @@
 // List of available ambient background videos
 const backgroundVideos = [
   "./data/video/cherry-leaves.1920x1080.mp4",
-  "./data/video/minecraft-autumn-mountains-moewalls-com.mp4",
+  "https://moewalls.com/wp-content/uploads/preview/2025/minecraft-autumn-mountains-preview.webm,
   "./data/video/minecraft-kitsune-girl-moewalls-com.mp4",
   "./data/video/steve-peaceful-day-of-fishing-minecraft-moewalls-com.mp4"
 ];
