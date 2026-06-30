@@ -1,0 +1,10 @@
+{
+  "name": "smp-website",
+  "version": "1.0.0",
+  "description": "Website for SMP Băng Cướp Vô Liêm Sỉ",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y http-server -p 3000 -c-1"
+  },
+  "dependencies": {}
+}

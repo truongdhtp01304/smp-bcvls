@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Trang web chính thức của máy chủ Minecraft sinh tồn SMP BĂNG CƯỚP VÔ LIÊM SỈ (Fabric 1.21.11). Xem hướng dẫn tham gia, nội quy server và tải modpack tối ưu hóa ngay hôm nay!">
+    <meta name="keywords"
+        content="minecraft smp, bang cuop vo liem si, minecraft viet nam, minecraft fabric 1.21.11, modpack minecraft, prism launcher cracked">
+    <meta name="author" content="Băng Cướp Vô Liêm Sỉ">
+    <link rel="icon" type="image/webp" href="./data/%E1%BA%A3nh/Favicon.webp">
+    <title>SMP BĂNG CƯỚP VÔ LIÊM SỈ - Minecraft Fabric 1.21.11</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Tiny5&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Background Video Container -->
+    <div class="video-bg-container">
+        <video id="bg-video" autoplay muted loop playsinline></video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Interactive Trail Grid Background -->
+    <div id="trail-grid" class="trail-grid-wrapper"></div>
+
+    <!-- Header & Navigation -->
+    <header class="main-header reveal-anim reveal-delay-1">
+        <div class="header-container">
+            <a href="#" class="logo-area">
+                <img src="./data/%E1%BA%A3nh/logo.webp" alt="Băng Cướp Vô Liêm Sỉ Logo" class="server-logo">
+                <span class="server-title">BĂNG CƯỚP VÔ LIÊM SỈ</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#hero" class="nav-link scramble-text" data-scramble="Trang Chủ">Trang Chủ</a>
+                <a href="#instructions" class="nav-link scramble-text" data-scramble="Hướng Dẫn">Hướng Dẫn</a>
+                <a href="#rules" class="nav-link scramble-text" data-scramble="Nội Quy">Nội Quy</a>
+                <a href="#donate" class="nav-link scramble-text" data-scramble="Ủng Hộ">Ủng Hộ</a>
+            </nav>
+
+            <div class="server-status-widget">
+                <div class="status-indicator">
+                    <span class="status-dot offline" id="status-dot"></span>
+                    <span class="status-text" id="status-text">Đang kiểm tra...</span>
+                </div>
+                <div class="ip-container">
+                    <span class="ip-text" id="server-ip">top-travelers.gl.joinmc.link</span>
+                    <button class="copy-btn" id="copy-ip-btn" title="Sao chép địa chỉ IP">
+                        <i data-lucide="copy" class="icon-sm"></i>
+                        <span>Copy IP</span>
+                    </button>
+                </div>
+            </div>
+
+            <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Menu di động">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="content-wrapper">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="badge-version reveal-anim reveal-delay-2">MÁY CHỦ FABRIC 1.21.11</div>
+                <h1 class="hero-title scramble-text reveal-anim reveal-delay-3" data-scramble="BĂNG CƯỚP VÔ LIÊM SỈ">
+                    BĂNG CƯỚP VÔ LIÊM SỈ</h1>
+                <p class="hero-subtitle reveal-anim reveal-delay-4">
+                    Thế giới sinh tồn Minecraft Fabric 1.21.11 đầy tự do, vui vẻ và kết nối.
+                    Tích hợp modpack tối ưu hóa FPS, shader rực rỡ và hệ thống đồng bộ tự động.
+                    Báo danh ngay để bắt đầu cuộc hành trình!
+                </p>
+                <div class="hero-actions reveal-anim reveal-delay-5">
+                    <a href="https://discord.gg/hRZ5YYafWB" target="_blank" class="btn btn-primary">
+                        <i data-lucide="message-square"></i>
+                        <span>Tham gia Discord báo danh</span>
+                    </a>
+                    <a href="#instructions" class="btn btn-secondary">
+                        <i data-lucide="download"></i>
+                        <span>Xem hướng dẫn cài đặt</span>
+                    </a>
+                </div>
+                <div class="settings-panel reveal-anim reveal-delay-6">
+                    <button class="settings-toggle-btn" id="video-toggle-btn" title="Bật/Tắt Video Nền">
+                        <i data-lucide="video" id="video-icon"></i>
+                        <span>Video Nền</span>
+                    </button>
+                    <button class="settings-toggle-btn" id="next-video-btn" title="Đổi Video Khác">
+                        <i data-lucide="skip-forward"></i>
+                        <span>Đổi Nền</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hướng Dẫn Tham Gia (Instructions) -->
+        <section id="instructions" class="section-container">
+            <h2 class="section-heading scramble-text" data-scramble="HƯỚNG DẪN THAM GIA">HƯỚNG DẪN THAM GIA</h2>
+            <p class="section-subheading">Chỉ với 3 bước đơn giản để kết nối vào thế giới sinh tồn của chúng tôi</p>
+
+            <div class="onboarding-grid">
+                <!-- Bước 1 -->
+                <div class="bento-card onboarding-card">
+                    <div class="step-badge">BƯỚC 1</div>
+                    <h3 class="card-title">Tải Launcher</h3>
+                    <p class="card-desc">
+                        Khuyên dùng <strong>Prism Launcher Cracked</strong> để dễ dàng quản lý phiên bản và cài đặt
+                        modpack. Nếu dùng official account có thể dùng Prism Launcher thường và modrinth.
+                    </p>
+                    <div class="card-links">
+                        <a href="https://github.com/Diegiwg/PrismLauncher-Cracked/releases" target="_blank"
+                            class="card-action-link">
+                            <span>Prism Launcher Cracked (Khuyên dùng)</span>
+                            <i data-lucide="external-link"></i>
+                        </a>
+                        <a href="https://prismlauncher.org/download/" target="_blank"
+                            class="card-action-link link-muted">
+                            <span>Prism Launcher (Chính thức)</span>
+                            <i data-lucide="external-link"></i>
+                        </a>
+                        <a href="https://modrinth.com/app" target="_blank" class="card-action-link link-muted">
+                            <span>Modrinth App (Chính thức)</span>
+                            <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bước 2 -->
+                <div class="bento-card onboarding-card">
+                    <div class="step-badge">BƯỚC 2</div>
+                    <h3 class="card-title">Cài Đặt Modpack</h3>
+                    <p class="card-desc">
+                        Tải tệp modpack của server (định dạng <strong>.mrpack</strong> hoặc thư mục
+                        <strong>.zip</strong>). Trong Prism Launcher, chọn <strong>Add Instance &gt; Import &gt; Chọn
+                            tệp đã tải</strong>. Phiên bản 1.21.11 và Fabric sẽ tự động thiết lập.
+                    </p>
+                    <div class="card-links">
+                        <a href="https://drive.google.com/file/d/1oFIMNJ2KezC7tlOSYWTY6sLOf9ticnAm/view?usp=sharing"
+                            target="_blank" class="card-action-link">
+                            <span>Tải File .mrpack (Nhanh)</span>
+                            <i data-lucide="download"></i>
+                        </a>
+                        <a href="https://drive.google.com/drive/folders/16rW-GiSUtbdj01G7PZKE0t3fLHoFEsO3?usp=sharing"
+                            target="_blank" class="card-action-link link-muted">
+                            <span>Tải File .zip (Dự phòng)</span>
+                            <i data-lucide="folder"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bước 3 -->
+                <div class="bento-card onboarding-card">
+                    <div class="step-badge">BƯỚC 3</div>
+                    <h3 class="card-title">Whitelist & Kết Nối</h3>
+                    <p class="card-desc">
+                        Vào Discord của máy chủ, báo danh tên nhân vật trong game (IGN) tại kênh
+                        <strong>🧾tên-người-chơi</strong> để admin kích hoạt Whitelist. Sau đó vào game, thêm máy chủ
+                        với IP (nhấp để sao chép):
+                    </p>
+                    <div class="ip-showcase-box" id="copy-ip-box">
+                        <code>top-travelers.gl.joinmc.link</code>
+                    </div>
+                    <p class="card-note">Server có tích hợp Automodpack để tự động đồng bộ mod khi admin cập nhật.</p>
+                </div>
+            </div>
+
+            <!-- Video hướng dẫn nổi bật -->
+            <div class="video-guide-banner">
+                <div class="banner-content">
+                    <i data-lucide="play-circle" class="banner-icon"></i>
+                    <div>
+                        <h4 class="banner-title">Xem Video Hướng Dẫn Chi Tiết</h4>
+                        <p class="banner-desc">Nếu gặp khó khăn trong quá trình cài đặt Prism Launcher và modpack, hãy
+                            xem video này.</p>
+                    </div>
+                </div>
+                <a href="https://drive.google.com/file/d/1d6SL_gdrMIm-dvfBVKOSfakSDJjTfPtp/view?usp=sharing"
+                    target="_blank" class="btn btn-primary btn-sm">
+                    <span>Xem Video HD</span>
+                    <i data-lucide="external-link"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Nội Quy Server (Rules) -->
+        <section id="rules" class="section-container">
+            <h2 class="section-heading scramble-text" data-scramble="NỘI QUY MÁY CHỦ">NỘI QUY MÁY CHỦ</h2>
+            <p class="section-subheading">Vui lòng đọc kỹ và tuân thủ để xây dựng một cộng đồng văn minh, vui vẻ</p>
+
+            <div class="bento-rules-grid">
+                <!-- Rule 1 -->
+                <div class="bento-card rule-card">
+                    <div class="rule-header">
+                        <i data-lucide="user-check" class="rule-icon icon-primary"></i>
+                        <h3 class="card-title">1. Xác Minh Danh Tính (IGN)</h3>
+                    </div>
+                    <p class="card-desc">
+                        Mọi người chơi bắt buộc phải tham gia Discord và đăng ký IGN của mình tại kênh
+                        <strong>🧾tên-người-chơi</strong>. Tài khoản chưa báo danh hoặc tự ý chơi sẽ bị
+                        <strong>BAN</strong>.
+                    </p>
+                    <ul class="rule-list">
+                        <li>Không đặt tên nhân vật có chứa dấu gạch dưới <code>_</code> để tránh lỗi xác minh.</li>
+                        <li>Tự bảo mật tài khoản cá nhân. Admin không hỗ trợ khôi phục đồ do chia sẻ mật khẩu.</li>
+                    </ul>
+                </div>
+
+                <!-- Rule 2 -->
+                <div class="bento-card rule-card">
+                    <div class="rule-header">
+                        <i data-lucide="shield" class="rule-icon icon-secondary"></i>
+                        <h3 class="card-title">2. Cướp Bóc & Phá Hoại</h3>
+                    </div>
+                    <p class="card-desc">
+                        Server cho phép lấy đồ rương không khóa hoặc tại các khu vực đất hoang chưa được bảo vệ. Tuy
+                        nhiên, hành vi đập phá công trình của người chơi khác là bị cấm.
+                    </p>
+                    <ul class="rule-list">
+                        <li>Cấm tuyệt đối sử dụng TNT hoặc Lava phá hoại khu vực công cộng (Spawn, Làng, Waystone).</li>
+                        <li>Hãy tự bảo vệ tài sản của mình bằng tính năng <strong>FTB Chunks</strong> (claim đất).</li>
+                        <li>Yêu cầu trồng lại cây xanh sau khi chặt. Không chiếm đất bừa bãi rồi bỏ hoang.</li>
+                    </ul>
+                </div>
+
+                <!-- Rule 3 -->
+                <div class="bento-card rule-card">
+                    <div class="rule-header">
+                        <i data-lucide="zap-off" class="rule-icon icon-destructive"></i>
+                        <h3 class="card-title">3. Gian Lận & Lag</h3>
+                    </div>
+                    <p class="card-desc">
+                        Để đảm bảo tính công bằng tuyệt đối cho game survival, mọi phần mềm gian lận và các máy móc gây
+                        quá tải hệ thống đều bị nghiêm cấm.
+                    </p>
+                    <ul class="rule-list">
+                        <li>Cấm sử dụng Hack/Cheat (Fly, X-ray, Auto-mine, Dupe đồ). Vi phạm lập tức bị BAN có thời hạn
+                            hoặc vĩnh viễn.</li>
+                        <li>Cấm xây dựng các cỗ máy gây lag server (lag machines).</li>
+                        <li>Cấm xây dựng các công trình phản cảm, biểu tượng chính trị, tôn giáo cực đoan. (ví dụ: ví
+                            dụ: cờ 3/, lá cờ Đức quốc xã, v.v.)</li>
+                    </ul>
+                </div>
+
+                <!-- Rule 4 -->
+                <div class="bento-card rule-card">
+                    <div class="rule-header">
+                        <i data-lucide="help-circle" class="rule-icon icon-accent"></i>
+                        <h3 class="card-title">4. Whitelist & Hỗ Trợ</h3>
+                    </div>
+                    <p class="card-desc">
+                        Mọi thắc mắc, yêu cầu Whitelist và báo cáo lỗi đều được xử lý chính thức qua Discord của server
+                        dưới sự điều hành của admin.
+                    </p>
+                    <ul class="rule-list">
+                        <li>Liên hệ trực tiếp admin <strong>@truongtrung014</strong> để duyệt danh sách trắng
+                            (Whitelist) sau khi đã báo danh.</li>
+                        <li>Nếu xảy ra tranh chấp hoặc mất mát, hãy gửi khiếu nại kèm bằng chứng tại kênh
+                            <strong>📩support-ticket</strong>.
+                        </li>
+                        <li>Thiếu hiểu biết về luật không phải là lý do để được giảm nhẹ hình phạt.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Donate Section -->
+        <section id="donate" class="section-container">
+            <h2 class="section-heading scramble-text" data-scramble="ỦNG HỘ MÁY CHỦ">ỦNG HỘ MÁY CHỦ</h2>
+            <p class="section-subheading">Đóng góp của bạn giúp duy trì đường truyền máy chủ ổn định và chất lượng cao
+            </p>
+
+            <div class="donate-box bento-card">
+                <div class="donate-content">
+                    <h3 class="card-title">Giao dịch an toàn qua QR Pay</h3>
+                    <p class="card-desc">
+                        Mọi khoản donate đều được dùng vào nâng cấp cấu hình RAM/CPU của
+                        server.
+                        Chúng tôi vô cùng trân trọng sự đóng góp của tất cả các thành viên!
+                        Chỉ cần 10k cũng đủ để server duy trì trong 1 năm!
+                    </p>
+                    <div class="donate-info-list">
+                        <div class="info-item">
+                            <i data-lucide="check-circle-2" class="icon-primary"></i>
+                            <span>Nội dung chuyển khoản: hãy duy trì máy chủ + tên người chơi.</span>
+                        </div>
+                        <div class="info-item">
+                            <i data-lucide="info" class="icon-secondary"></i>
+                            <span>Sau khi gửi, hãy nhắn tin admin @truongtrung014 để nhận role Donator trong
+                                game.</span>
+                        </div>
+                        <div class="info-item">
+                            <i data-lucide="clock" class="icon-accent"></i>
+                            <span><strong>Lưu ý:</strong> Đóng góp tối thiểu 10k để được nhận role. Role có thời hạn 1
+                                tháng/10k (Ví dụ: Donate 30k để nhận role 3 tháng).</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="donate-qr-wrapper">
+                    <img src="./data/%E1%BA%A3nh/QR%20pay.webp" alt="QR Pay Code" class="qr-code-img">
+                    <span class="qr-label">Quét mã để quyên góp</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p class="footer-warning">
+                <i data-lucide="alert-triangle" class="icon-sm"></i>
+                <span>Hệ thống tự động ghi log mọi hành động của người chơi để bảo vệ tính công bằng và an toàn cho dữ
+                    liệu thế giới sinh tồn.</span>
+            </p>
+            <div class="footer-links">
+                <a href="https://discord.gg/hRZ5YYafWB" target="_blank" class="footer-link">
+                    <i data-lucide="message-square"></i>
+                    <span>Cộng đồng Discord</span>
+                </a>
+                <span class="footer-separator">|</span>
+                <span class="footer-admin">Liên hệ Admin: <strong>@truongtrung014</strong></span>
+            </div>
+            <p class="footer-copyright">Copyright &copy; 2026 Băng Cướp Vô Liêm Sỉ - SMP Server. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast-message">Đã sao chép IP máy chủ vào bộ nhớ tạm!</div>
+
+    <!-- Custom JS -->
+    <script src="./app.js"></script>
+</body>
+
+</html>
