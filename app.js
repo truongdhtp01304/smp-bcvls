@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const videoToggleBtn = document.getElementById("video-toggle-btn");
   const videoIcon = document.getElementById("video-icon");
   const nextVideoBtn = document.getElementById("next-video-btn");
-  
+
   let currentVideoIndex = Math.floor(Math.random() * backgroundVideos.length);
-  
+
   // Persist video enabled state across page refreshes
   let isVideoEnabled = localStorage.getItem("videoEnabled") !== "false";
 
@@ -163,38 +163,38 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderModList(searchQuery = "") {
     if (!fullModListContainer) return;
     fullModListContainer.innerHTML = "";
-    
+
     const query = searchQuery.toLowerCase().trim();
     let matchCount = 0;
 
     modPackList.forEach(mod => {
       if (mod.toLowerCase().includes(query)) {
         matchCount++;
-        
+
         // Create mod item elements
         const modItem = document.createElement("div");
         modItem.className = "mod-list-item";
-        
+
         const modIcon = document.createElement("div");
         modIcon.className = "mod-item-icon";
         modIcon.innerHTML = `<i data-lucide="package" class="icon-xs"></i>`;
-        
+
         const modName = document.createElement("span");
         modName.className = "mod-item-name";
-        
+
         // Highlight search keyword if matching
         if (query) {
           const startIndex = mod.toLowerCase().indexOf(query);
           const endIndex = startIndex + query.length;
-          const highlightedText = 
-            mod.substring(0, startIndex) + 
-            `<mark class="search-highlight">${mod.substring(startIndex, endIndex)}</mark>` + 
+          const highlightedText =
+            mod.substring(0, startIndex) +
+            `<mark class="search-highlight">${mod.substring(startIndex, endIndex)}</mark>` +
             mod.substring(endIndex);
           modName.innerHTML = highlightedText;
         } else {
           modName.textContent = mod;
         }
-        
+
         modItem.appendChild(modIcon);
         modItem.appendChild(modName);
         fullModListContainer.appendChild(modItem);
@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileToggle.addEventListener("click", () => {
       navMenu.classList.toggle("open");
       const isOpen = navMenu.classList.contains("open");
-      
+
       if (menuIcon) {
         if (isOpen) {
           menuIcon.setAttribute("data-lucide", "x");
@@ -274,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function calculateGridDimensions() {
     if (!trailGridContainer) return;
-    
+
     // Clear existing cells and timeouts
     trailGridContainer.innerHTML = "";
     cells = [];
@@ -284,7 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cols = Math.ceil(document.documentElement.clientWidth / cellSize);
     rows = Math.ceil(document.documentElement.clientHeight / cellSize);
-    
+
     trailGridContainer.style.gridTemplateColumns = `repeat(${cols}, ${cellSize}px)`;
     trailGridContainer.style.gridTemplateRows = `repeat(${rows}, ${cellSize}px)`;
 
@@ -305,7 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateRadii(i, curRow, curCol) {
       if (i < 0 || i >= cells.length || !cells[i]) return;
-      
+
       const topActive = curRow > 0 && cells[i - cols]?.classList.contains("active");
       const bottomActive = curRow < rows - 1 && cells[i + cols]?.classList.contains("active");
       const leftActive = curCol > 0 && cells[i - 1]?.classList.contains("active");
@@ -399,7 +399,7 @@ document.addEventListener("DOMContentLoaded", () => {
           .map((char, i) => {
             if (char === " ") return " ";
             if (i < revealedLength) return originalText[i];
-            
+
             const randomChar = SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
             return `<span class="scramble-char-scrambling">${randomChar}</span>`;
           })
@@ -448,7 +448,7 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const target = entry.target;
-        
+
         // Dynamic staggered delay based on grid indexing
         if (target.classList.contains("onboarding-card")) {
           const cards = Array.from(document.querySelectorAll(".onboarding-card"));
@@ -459,7 +459,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const index = cards.indexOf(target);
           target.style.transitionDelay = `${(index % 2) * 0.15}s`;
         }
-        
+
         target.classList.add("revealed");
         obs.unobserve(target);
       }
