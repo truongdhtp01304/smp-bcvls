@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Nội quy chính thức của máy chủ Minecraft sinh tồn SMP BĂNG CƯỚP VÔ LIÊM SỈ. Vui lòng đọc kỹ và tuân thủ để cùng xây dựng một cộng đồng vui vẻ, văn minh.">
+    <meta name="keywords"
+        content="minecraft smp, bang cuop vo liem si, noi quy minecraft, luat server minecraft, fabric 1.21.11">
+    <meta name="author" content="Băng Cướp Vô Liêm Sỉ">
+    <link rel="icon" type="image/webp" href="./data/%E1%BA%A3nh/Favicon.webp">
+    <title>Nội Quy Máy Chủ - SMP BĂNG CƯỚP VÔ LIÊM SỈ</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Tiny5&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Marked.js Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Background Video Container -->
+    <div class="video-bg-container">
+        <video id="bg-video" autoplay muted loop playsinline></video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Interactive Trail Grid Background -->
+    <div id="trail-grid" class="trail-grid-wrapper"></div>
+
+    <!-- Header & Navigation -->
+    <header class="main-header reveal-anim reveal-delay-1">
+        <div class="header-container">
+            <a href="index.html#hero" class="logo-area">
+                <img src="./data/%E1%BA%A3nh/logo.webp" alt="Băng Cướp Vô Liêm Sỉ Logo" class="server-logo">
+                <span class="server-title">BĂNG CƯỚP VÔ LIÊM SỈ</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html#hero" class="nav-link scramble-text" data-scramble="Trang Chủ">Trang Chủ</a>
+                <a href="index.html#instructions" class="nav-link scramble-text" data-scramble="Hướng Dẫn">Hướng Dẫn</a>
+                <a href="rules.html" class="nav-link scramble-text active" data-scramble="Nội Quy">Nội Quy</a>
+                <a href="index.html#donate" class="nav-link scramble-text" data-scramble="Ủng Hộ">Ủng Hộ</a>
+            </nav>
+
+            <div class="server-status-widget">
+                <div class="status-indicator">
+                    <span class="status-dot offline" id="status-dot"></span>
+                    <span class="status-text" id="status-text">Đang kiểm tra...</span>
+                </div>
+                <div class="ip-container">
+                    <span class="ip-text" id="server-ip">top-travelers.gl.joinmc.link</span>
+                    <button class="copy-btn" id="copy-ip-btn" title="Sao chép địa chỉ IP">
+                        <i data-lucide="copy" class="icon-sm"></i>
+                        <span>Copy IP</span>
+                    </button>
+                </div>
+            </div>
+
+            <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Menu di động">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content: Rules Container -->
+    <main class="rules-container reveal-anim reveal-delay-2">
+        <div class="rules-card">
+            <div id="rules-content" class="markdown-body">
+                <div style="text-align: center; padding: 40px 0; color: var(--text-muted);">
+                    <div class="loading-spinner" style="margin: 0 auto 16px auto; width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.1); border-top-color: var(--primary); border-radius: 50%; animation: spin 1s infinite linear;"></div>
+                    Đang tải nội quy máy chủ...
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p class="footer-warning">
+                <i data-lucide="alert-triangle" class="icon-sm"></i>
+                <span>Hệ thống tự động ghi log mọi hành động của người chơi để bảo vệ tính công bằng và an toàn cho dữ liệu thế giới sinh tồn.</span>
+            </p>
+            <div class="footer-links">
+                <a href="https://discord.gg/hRZ5YYafWB" target="_blank" class="footer-link">
+                    <i data-lucide="message-square"></i>
+                    <span>Cộng đồng Discord</span>
+                </a>
+                <span class="footer-separator">|</span>
+                <span class="footer-admin">Liên hệ Admin: <strong>@truongtrung014</strong></span>
+            </div>
+            <p class="footer-copyright">Copyright &copy; 2026 Băng Cướp Vô Liêm Sỉ - SMP Server. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Video & Theme Control Buttons -->
+    <div class="video-controls reveal-anim reveal-delay-3">
+        <button class="control-btn" id="video-toggle-btn" title="Bật/Tắt Video Nền">
+            <i data-lucide="video" id="video-icon"></i>
+            <span class="btn-tooltip">Tắt Nền</span>
+        </button>
+        <button class="control-btn" id="next-video-btn" title="Đổi Video Nền">
+            <i data-lucide="skip-forward"></i>
+            <span class="btn-tooltip">Đổi Nền</span>
+        </button>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast-message">Đã sao chép IP máy chủ vào bộ nhớ tạm!</div>
+
+    <!-- Spinner Animation Style -->
+    <style>
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+
+    <!-- Markdown Fetch & Render Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("rules.md")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Không thể tải tệp rules.md");
+                    }
+                    return response.text();
+                })
+                .then(markdown => {
+                    // Configure marked options if needed, then parse
+                    document.getElementById("rules-content").innerHTML = marked.parse(markdown);
+                    
+                    // Re-initialize any Lucide icons that were injected inside the markdown if any
+                    if (window.lucide) {
+                        window.lucide.createIcons();
+                    }
+                })
+                .catch(error => {
+                    document.getElementById("rules-content").innerHTML = `
+                        <div style="text-align: center; color: #f87171; padding: 40px 0;">
+                            <i data-lucide="alert-octagon" style="width: 48px; height: 48px; margin-bottom: 16px;"></i>
+                            <h3>Lỗi khi tải nội quy</h3>
+                            <p>${error.message}</p>
+                            <button onclick="location.reload()" class="btn btn-primary" style="margin-top: 16px; padding: 8px 16px;">Thử lại</button>
+                        </div>
+                    `;
+                    if (window.lucide) {
+                        window.lucide.createIcons();
+                    }
+                });
+        });
+    </script>
+
+    <!-- Custom JS -->
+    <script src="./app.js"></script>
+</body>
+
+</html>
