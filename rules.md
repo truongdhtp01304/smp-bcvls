@@ -35,3 +35,13 @@
 * Nếu xảy ra tranh chấp hoặc mất mát tài sản, hãy gửi khiếu nại kèm theo bằng chứng hình ảnh/video cụ thể tại kênh **📩support-ticket**.
 * Không gửi khiếu nại vô căn cứ hoặc liên tục spam đòi gỡ ban trước thời hạn.
 * **Lưu ý:** Việc thiếu hiểu biết về luật lệ máy chủ sẽ không được chấp nhận làm lý do để giảm nhẹ hình phạt.
+
+---
+
+## 5. Đề Xuất & Thêm Mod Mới (Kênh 🧑🏭 gợi-ý-thêm-mods)
+* Đây là kênh tiếp nhận đề xuất mod cho máy chủ SMP. Chúng tôi giới hạn số lượng mod hoạt động để bảo vệ hệ thống và giữ cân bằng lối chơi sinh tồn. Nhiều mod được đánh giá là phù hợp sinh tồn thông thường vẫn sẽ bị từ chối nếu làm mất đi độ khó cốt lõi của game hoặc không đúng với định hướng của máy chủ.
+* Các loại mod sẽ bị từ chối gồm:
+  * **Làm mất cân bằng sinh tồn:** Mod cung cấp cơ chế quá mạnh như phép thuật tự bay, hoặc cho phép kiếm tài nguyên quý hiếm quá sớm làm rút ngắn giai đoạn trải nghiệm sinh tồn.
+  * **Gây hại và lỗi hệ thống:** Mod liên quan đến phá hoại, mod vũ khí quân sự, các mod tối ưu kém gây lag (như hiện tượng *Noisy Neighbor* hoặc mã nguồn cẩu thả do AI viết).
+  * **Nội dung không phù hợp:** Các mod chứa yếu tố chính trị hoặc các chủ đề nhạy cảm khác.
+
