@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 2. Fetch Minecraft Server Status
   const statusDot = document.getElementById("status-dot");
   const statusText = document.getElementById("status-text");
-  const serverIp = "top-travelers.gl.joinmc.link";
+  const serverIp = "parties-visual.gl.joinmc.link";
 
   async function checkServerStatus() {
     // 1. Try mcstatus.io (v2 API) - highly reliable with no strict rate limits
