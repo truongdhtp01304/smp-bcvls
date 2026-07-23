@@ -1,6 +1,6 @@
 # **SMP \- BĂNG CƯỚP VÔ LIÊM SỈ**
 
-**IP:** top-travelers.gl.joinmc.link | 1.21.1 Neoforge
+**IP:** parties-visual.gl.joinmc.link | 1.21.1 Neoforge
 
 *![][image1]*
 
